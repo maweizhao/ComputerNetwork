@@ -41,7 +41,6 @@ public class PractiseFragment extends Fragment {
     SingleBase singleBase =SingleBase.getInstance();
 
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -70,6 +69,7 @@ public class PractiseFragment extends Fragment {
         answerC=(LinearLayout) view.findViewById(R.id.answer_C);
         answerD=(LinearLayout) view.findViewById(R.id.answer_D);
         words=singleBase.setWorddata(getActivity());
+
 
         setQuestion();
 
@@ -174,7 +174,6 @@ public class PractiseFragment extends Fragment {
                     t1.setText("");
                 }
                 setQuestion();
-
             }
         });
 

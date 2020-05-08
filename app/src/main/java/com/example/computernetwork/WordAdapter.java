@@ -15,15 +15,15 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.ViewHolder> {
     private List<Word> mWordList;
 
     static class ViewHolder extends RecyclerView.ViewHolder{
-        TextView wordEnglish;
-        TextView wordChinese;
-        TextView wordID;
+        TextView wordEnglish, wordChinese, wordID, wordabb;
+
 
         public ViewHolder(View view){
             super(view);
             wordEnglish = (TextView)view.findViewById(R.id.word_English);
             wordChinese = (TextView)view.findViewById(R.id.word_Chinese);
             wordID=(TextView)view.findViewById(R.id.word_number);
+            wordabb = (TextView) view.findViewById(R.id.word_abb);
         }
     }
 
@@ -46,6 +46,7 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.ViewHolder> {
         holder.wordEnglish.setText(word.getEnglish());
         holder.wordChinese.setText(word.getChinese());
         holder.wordID.setText(String.valueOf(word.getID()));
+        holder.wordabb.setText(word.getAbbreviations());
     }
 
     @Override
