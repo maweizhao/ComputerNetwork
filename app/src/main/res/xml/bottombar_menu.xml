@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_home"
+        title="Home"
+        icon ="@drawable/home"
+        barColorWhenSelected="#A5A5A5"
+        />
+    <tab
+        id="@+id/tab_Practise"
+        title="Practise"
+        icon ="@drawable/practise"
+        barColorWhenSelected="#A5A5A5"
+        />
+    <tab
+        id="@+id/tab_Content"
+        title="Content"
+        icon ="@drawable/content"
+        barColorWhenSelected="#A5A5A5"
+        />
+
+</tabs>
