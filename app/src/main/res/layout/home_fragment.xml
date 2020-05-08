@@ -177,16 +177,16 @@
         android:layout_marginTop="100dp"
         >
     <Button
-        android:id="@+id/home_fresh_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="刷新"
-        />
-    <Button
         android:id="@+id/home_answer_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="答案"
+        />
+    <Button
+        android:id="@+id/home_fresh_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="下一题"
         android:layout_marginLeft="100dp"/>
 </LinearLayout>
 
