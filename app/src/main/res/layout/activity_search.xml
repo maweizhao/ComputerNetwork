@@ -17,6 +17,8 @@
         android:layout_weight="1"
         android:hint="输入要查询的词"
         android:gravity="center"
+        android:singleLine="true"
+        android:imeOptions="actionSearch"
         />
 
     <Button

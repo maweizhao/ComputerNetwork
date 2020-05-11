@@ -22,6 +22,7 @@ public class SearchFragment extends Fragment{
 
     SingleBase singleBase =SingleBase.getInstance();
     public List<Word> words;
+    public String searchword = "";
 
 
     @Nullable
@@ -36,8 +37,9 @@ public class SearchFragment extends Fragment{
 
         //从Search_Activity获得EditText数据
         Bundle bundle=getArguments();
-        String searchword = bundle.getString("one").toUpperCase();
 
+        searchword = bundle.getString("one").toUpperCase();
+        searchword = bundle.getString("one").toUpperCase();
 
 
 
