@@ -1,30 +1,22 @@
 package com.example.computernetwork;
 
-import android.app.Activity;
-import android.content.Context;
+import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-
-import android.app.Fragment;
-import android.view.ViewTreeObserver;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import com.example.computernetwork.db.GreendaoWord;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+
 import com.example.computernetwork.db.WordDao;
 
 import java.util.List;

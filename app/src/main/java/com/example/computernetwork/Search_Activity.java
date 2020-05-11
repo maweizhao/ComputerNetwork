@@ -1,14 +1,9 @@
 package com.example.computernetwork;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -16,8 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-
-import java.util.List;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Search_Activity extends AppCompatActivity {
 

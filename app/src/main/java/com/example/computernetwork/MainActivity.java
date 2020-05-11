@@ -1,13 +1,8 @@
 package com.example.computernetwork;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-
-
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -15,13 +10,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.computernetwork.db.DaoMaster;
 import com.example.computernetwork.db.DaoSession;
-import com.example.computernetwork.db.GreendaoWord;
-import com.example.computernetwork.db.WordDao;
 import com.roughike.bottombar.BottomBar;
-
 import com.roughike.bottombar.OnTabReselectListener;
 
 

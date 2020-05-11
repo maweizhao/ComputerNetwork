@@ -1,5 +1,6 @@
 package com.example.computernetwork;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,10 +11,6 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Fragment;
-
-
-import com.example.computernetwork.db.GreendaoWord;
 import com.example.computernetwork.db.WordDao;
 
 import java.util.List;
