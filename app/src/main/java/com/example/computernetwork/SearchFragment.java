@@ -50,7 +50,10 @@ public class SearchFragment extends Fragment{
 
 
         //查询数据库
-        List<Word> searchwords= wordDao.queryBuilder().where(WordDao.Properties.English.eq(searchword)).build().list();
+        List<Word> searchwords = wordDao.queryBuilder().whereOr(WordDao.Properties.English.eq(searchword),
+                WordDao.Properties.ID.eq(searchword),
+                WordDao.Properties.Chinese.eq(searchword),
+                WordDao.Properties.Abbreviations.eq(searchword)).build().list();
 
 
         if(searchwords!=null&&searchwords.size()>0) {

@@ -1,8 +1,10 @@
 package com.example.computernetwork;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +17,8 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
 import android.app.Fragment;
+import android.view.ViewTreeObserver;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -142,31 +146,7 @@ public class HomeFragment extends Fragment {
                 //查询
                 String searchword = eng1.getText().toString();
                 List<Word> searchwords = singleBase.getWordDao().queryBuilder().where(WordDao.Properties.English.eq(searchword)).build().list();
-
-                //加载wiev，用于popwindow
-                View viewWordPop = getLayoutInflater().inflate(R.layout.word_pop, null);
-                LinearLayout linearlayout = (LinearLayout) viewWordPop.findViewById(R.id.word_pop_lin);
-                popwordabb = (TextView) viewWordPop.findViewById(R.id.pop_word_abb);
-                popwordeng = (TextView) viewWordPop.findViewById(R.id.pop_word_english);
-                popwordchi = (TextView) viewWordPop.findViewById(R.id.pop_word_chinese);
-
-                //setpopword
-                popwordchi.setText(searchwords.get(0).getChinese());
-                popwordabb.setText(searchwords.get(0).getAbbreviations());
-                popwordeng.setText(searchwords.get(0).getEnglish());
-
-
-                //measure方法的参数值都设为0即可
-                linearlayout.measure(0, 0);
-                //获取组件的宽度
-                int width = linearlayout.getMeasuredWidth();
-                //获取组件的高度
-                int height = linearlayout.getMeasuredHeight();
-                final PopupWindow popword = new PopupWindow(viewWordPop, width, height);
-                popword.setOutsideTouchable(true);
-
-
-                popword.showAsDropDown(homes1);
+                popwordwindow(searchwords, homes1);
             }
         });
 
@@ -178,30 +158,8 @@ public class HomeFragment extends Fragment {
                 String searchword = eng2.getText().toString();
                 List<Word> searchwords = singleBase.getWordDao().queryBuilder().where(WordDao.Properties.English.eq(searchword)).build().list();
 
-                //加载wiev，用于popwindow
-                View viewWordPop = getLayoutInflater().inflate(R.layout.word_pop, null);
-                LinearLayout linearlayout = (LinearLayout) viewWordPop.findViewById(R.id.word_pop_lin);
-                popwordabb = (TextView) viewWordPop.findViewById(R.id.pop_word_abb);
-                popwordeng = (TextView) viewWordPop.findViewById(R.id.pop_word_english);
-                popwordchi = (TextView) viewWordPop.findViewById(R.id.pop_word_chinese);
+                popwordwindow(searchwords, homes2);
 
-                //setpopword
-                popwordchi.setText(searchwords.get(0).getChinese());
-                popwordabb.setText(searchwords.get(0).getAbbreviations());
-                popwordeng.setText(searchwords.get(0).getEnglish());
-
-
-                //measure方法的参数值都设为0即可
-                linearlayout.measure(0, 0);
-                //获取组件的宽度
-                int width = linearlayout.getMeasuredWidth();
-                //获取组件的高度
-                int height = linearlayout.getMeasuredHeight();
-                final PopupWindow popword = new PopupWindow(viewWordPop, width, height);
-                popword.setOutsideTouchable(true);
-
-
-                popword.showAsDropDown(homes2);
             }
         });
 
@@ -212,71 +170,70 @@ public class HomeFragment extends Fragment {
                 //查询
                 String searchword = eng3.getText().toString();
                 List<Word> searchwords = singleBase.getWordDao().queryBuilder().where(WordDao.Properties.English.eq(searchword)).build().list();
+                popwordwindow(searchwords, homes3);
 
-                //加载wiev，用于popwindow
-                View viewWordPop = getLayoutInflater().inflate(R.layout.word_pop, null);
-                LinearLayout linearlayout = (LinearLayout) viewWordPop.findViewById(R.id.word_pop_lin);
-                popwordabb = (TextView) viewWordPop.findViewById(R.id.pop_word_abb);
-                popwordeng = (TextView) viewWordPop.findViewById(R.id.pop_word_english);
-                popwordchi = (TextView) viewWordPop.findViewById(R.id.pop_word_chinese);
-
-                //setpopword
-                popwordchi.setText(searchwords.get(0).getChinese());
-                popwordabb.setText(searchwords.get(0).getAbbreviations());
-                popwordeng.setText(searchwords.get(0).getEnglish());
-
-
-                //measure方法的参数值都设为0即可
-                linearlayout.measure(0, 0);
-                //获取组件的宽度
-                int width = linearlayout.getMeasuredWidth();
-                //获取组件的高度
-                int height = linearlayout.getMeasuredHeight();
-                final PopupWindow popword = new PopupWindow(viewWordPop, width, height);
-                popword.setOutsideTouchable(true);
-
-
-                popword.showAsDropDown(homes3);
             }
         });
 
-//点击选项然后popword
+        //点击选项然后popword
         homes4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //查询
                 String searchword = eng4.getText().toString();
                 List<Word> searchwords = singleBase.getWordDao().queryBuilder().where(WordDao.Properties.English.eq(searchword)).build().list();
+                popwordwindow(searchwords, homes4);
 
-                //加载wiev，用于popwindow
-                View viewWordPop = getLayoutInflater().inflate(R.layout.word_pop, null);
-                LinearLayout linearlayout = (LinearLayout) viewWordPop.findViewById(R.id.word_pop_lin);
-                popwordabb = (TextView) viewWordPop.findViewById(R.id.pop_word_abb);
-                popwordeng = (TextView) viewWordPop.findViewById(R.id.pop_word_english);
-                popwordchi = (TextView) viewWordPop.findViewById(R.id.pop_word_chinese);
-
-                //setpopword
-                popwordchi.setText(searchwords.get(0).getChinese());
-                popwordabb.setText(searchwords.get(0).getAbbreviations());
-                popwordeng.setText(searchwords.get(0).getEnglish());
-
-
-                //measure方法的参数值都设为0即可
-                linearlayout.measure(0, 0);
-                //获取组件的宽度
-                int width = linearlayout.getMeasuredWidth();
-                //获取组件的高度
-                int height = linearlayout.getMeasuredHeight();
-                final PopupWindow popword = new PopupWindow(viewWordPop, width, height);
-                popword.setOutsideTouchable(true);
-
-
-                popword.showAsDropDown(homes4);
             }
         });
 
 
     }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void popwordwindow(List<Word> searchwords, final View view) {
+
+
+        //加载wiev，用于popwindow
+        final View viewWordPop = getLayoutInflater().inflate(R.layout.word_pop, null);
+        final LinearLayout linearlayout = (LinearLayout) viewWordPop.findViewById(R.id.word_pop_lin);
+        popwordabb = (TextView) viewWordPop.findViewById(R.id.pop_word_abb);
+        popwordeng = (TextView) viewWordPop.findViewById(R.id.pop_word_english);
+        popwordchi = (TextView) viewWordPop.findViewById(R.id.pop_word_chinese);
+
+        //setpopword
+        popwordchi.setText(searchwords.get(0).getChinese());
+        popwordabb.setText(searchwords.get(0).getAbbreviations());
+        popwordeng.setText(searchwords.get(0).getEnglish());
+
+
+        //measure方法的参数值都设为0即可
+        viewWordPop.measure(0, 0);
+        //获取组件的宽度
+        int width = 0;
+        if (linearlayout.getMeasuredWidth() > view.getWidth()) {
+            width = view.getWidth();
+
+        } else {
+            width = linearlayout.getMeasuredWidth();
+        }
+
+
+        //获取组件的高度
+
+
+        final PopupWindow popword = new PopupWindow(viewWordPop, width, 0);
+        //popwindow高度匹配内容
+        popword.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+        //触摸window外取消window
+        popword.setOutsideTouchable(true);
+        popword.showAsDropDown(view);
+
+
+    }
+
+
 
 
     private int getRandomWord(){
