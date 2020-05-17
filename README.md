@@ -14,7 +14,7 @@ APP由4部分组成，包括Home，Practise，Content，Search组成<br>
  * Content
 该模块仅仅展示数据库的目录 <br>
  ![image](https://github.com/maweizhao/ComputerNetwork/blob/master/introductionpic/content.png)
-  * Content
+  * Search
 该模块用于搜索，可以输入序号、英文缩写、中文、全称 <br>
  ![image](https://github.com/maweizhao/ComputerNetwork/blob/master/introductionpic/search.png)
   
